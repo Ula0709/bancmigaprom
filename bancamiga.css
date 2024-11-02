@@ -1,0 +1,480 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+@import "bootstrap.min.css";
+@import "font-awesome.min.css";
+/*@import "font-opensans.css";*/
+@import "pe-icon-7-stroke.css";
+@import "helper.css";
+@import "smartadmin-production-plugins.min.css";
+@import "smartadmin-production.min.css";
+@import "smartadmin-skins.min.css";
+@import "pace.css";
+@import "video.css";
+@import "../js/plugin/limonte-sweetalert2/sweetalert2.min.css";
+
+/******************************************************************************************/
+/* APLICATIVO */
+/******************************************************************************************/
+
+.btn {
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+/*.btn-danger {*/
+
+/*color: #fff;*/
+
+/*background-color: #E91E63;*/
+
+/*border: none;*/
+
+/*}*/
+
+.btn-primary {
+    color: #fff;
+    background-color: rgba(0, 82, 145, 1) !important;
+    border: none;
+}
+
+.btn-primary-green {
+    color: #fff;
+    background-color: rgba(99, 167, 10, 1) !important; /*Verde*/
+    border: none;
+}
+
+.btn-primary-white {
+    color: #005291;
+    background-color: rgba(255, 255, 255, 1) !important; /*Blanco*/
+    border: none;
+}
+
+.vl {
+    border-left: 6px solid rgba(0, 83, 143, 1) !important;
+    height: 500px;
+    position: absolute;
+    left: 25%;
+    margin-left: -3px;
+    top: 0;
+}
+
+/*.btn-info {*/
+
+/*color: #fff;*/
+
+/*background-color: #aa66cc;*/
+
+/*border: none;*/
+
+/*}*/
+
+.btn-success {
+    color: #fff;
+    background-color: #56a419;
+    border: none;
+}
+
+/*.btn-default {*/
+
+/*color: #fff;*/
+
+/*background-color: #2BBBAD;*/
+
+/*border: none;*/
+
+/*}*/
+
+/*Imagen del logo*/
+
+#logo {
+    display: inline-block;
+    width: 100% !important;
+    margin-top: 9px;
+    margin-left: 9px;
+}
+
+#logo img {
+    width: 60%;
+    height: auto;
+    padding-left: 3px;
+}
+
+#logo-vip {
+    display: inline-block;
+    width: 100% !important;
+    margin-top: 9px;
+    margin-left: 9px;
+}
+
+#logo-vip img {
+    width: 80%;
+    height: auto;
+    padding-left: 3px;
+}
+
+#logo-group {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.52+0,0+100 */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#85000000', endColorstr='#00000000', GradientType=1); /* IE6-9 */
+}
+
+.img-footer {
+    width: 15%;
+    margin-top: 0px;
+    margin-left: 9px;
+}
+
+.smart-style-2 aside {
+    /*background: rgba(255, 255, 255, 1);*/
+
+}
+
+.smart-style-2 nav ul li a {
+    color: rgba(0, 83, 143, 1) !important; /*Azul*/
+    font-size: 12px !important;
+}
+
+
+.smart-style-2 nav ul .active > a,
+.smart-style-2 nav ul li.open > a,
+.smart-style-2 nav ul li.open > a b {
+    color: rgba(86, 164, 25, 1) !important; /*Verde*/
+    font-weight: 500;
+}
+
+.bg-color-verde-bancamiga {
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(99, 167, 10, 1) !important; /*Verde*/
+}
+
+.error {
+    color: #ff0103 !important;
+}
+
+.radius-10 {
+    border-radius: 10px !important;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-transparent {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.ajax-loading-animation {
+    text-align: center;
+    background-size: cover;
+    margin-top: 20vh;
+    height: 100px;
+}
+
+nav ul li.active > a:before {
+    color: rgba(99, 167, 10, 1) !important; /*Verde*/
+}
+
+nav ul li.active > a {
+    background-color: rgba(255, 255, 255, .7) !important; /*Verde*/;
+    border-radius: 2px;
+}
+
+.bg-color-verde {
+    background: rgba(99, 167, 10, 1) !important; /*Verde*/
+}
+
+.bg-color-verde-2 {
+    background: #61A60E !important; /*Verde*/
+}
+
+.bg-color-azul {
+    background: rgba(0, 83, 143, 1) !important; /*Azul*/
+}
+
+.txt-color-verde {
+    color: rgba(99, 167, 10, 1) !important; /*Verde*/
+}
+
+.txt-color-azul {
+    color: rgba(0, 83, 143, 1) !important; /*Azul*/
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #fff;
+    background-color: rgba(0, 83, 143, 1) !important; /*Azul*/
+}
+
+.bg-opacity-5 {
+    opacity: .5 !important;
+}
+
+.padding-lr {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.img-picker:hover {
+    cursor: pointer;
+}
+
+/*Boton de minificacion */
+.smart-style-2 .minifyme {
+    background: #61A60E;
+    border-bottom: 1px solid #61A60E;
+    color: #fafafa;
+}
+
+/*Plugin de Select2*/
+.select2-container .select2-choice, .select2-selection {
+    display: block;
+    height: 32px;
+    padding: 0 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    line-height: 32px;
+    color: #444;
+    text-decoration: none;
+    background-clip: padding-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+}
+
+/*Para alinear los numeros a la izquierda*/
+.number {
+    text-align: right;
+}
+
+/*Titulo azul en todos los formularios*/
+.smart-form header {
+    color: rgba(0, 83, 143, 1) !important; /*Azul*/
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.banco {
+    width: 50px;
+    background: url(../img/flags/flags.png) no-repeat;
+    margin-top: -.18em;
+    display: inline-block;
+}
+
+/*FINDOS DE LA APLICACION */
+
+#extr-page #main {
+    background-image: url("/img/bg/BancamigaEnLinea.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.mainRegister {
+    margin: 0px !important;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: table;
+    overflow: hidden;
+    background-image: url("/img/bg/BancamigaEnLinea.jpg");
+    background-size: cover;
+}
+
+.MessageBoxContainer {
+    background-color: rgba(99, 167, 10, 0.6) !important;
+}
+
+.tile {
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+    font-size: .81rem;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: .375rem;
+    border: 0;
+    border-radius: .125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    color: #fff !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    overflow: hidden;
+}
+
+.tile:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    color: #fff;
+    border-color: #0062cc;
+}
+
+.smart-form .tooltip {
+    z-index: 1 !important;
+}
+
+.smart-style-2 .superbox-show {
+    color: rgba(38, 50, 56, 1) !important;
+    background: rgba(0, 82, 145, 1) !important; /*Azul*/
+}
+
+.smart-style-2 #header {
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(0, 82, 145, 1) !important; /*Azul*/
+    background-image: url("/img/bg/fondoBancamigaAzulyVerde01.jpg") !important;
+    background-size: cover !important;
+}
+
+.smart-style-2 .page-footer {
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(0, 82, 145, 1) !important; /*Azul*/
+}
+
+.loading-ajax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 99999;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, .90) !important;
+}
+
+.smart-form fieldset {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #fafafa !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #fafafa !important;
+}
+
+.smart-style-2 #ribbon {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f4c6b+0,3f4c6b+100;Blue+Grey+Flat */
+    background: rgb(63, 76, 107); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(63, 76, 107, 1) 0%, rgba(63, 76, 107, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(63, 76, 107, 1) 0%, rgba(63, 76, 107, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(63, 76, 107, 1) 0%, rgba(63, 76, 107, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f4c6b', endColorstr='#3f4c6b', GradientType=0); /* IE6-9 */
+    color: #fff !important;
+}
+
+table .selected {
+    background-color: rgba(0, 83, 143, 1) !important; /*Azul*/
+    color: rgba(255, 255, 255, 1) !important; /*Azul*/
+}
+
+#mensajes {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default !important;
+    display: inline-block;
+    font-weight: 700;
+    height: 24px;
+    width: 24px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    font-size: 15px;
+    margin: 10px 0 0;
+    position: relative;
+    background: 0 0;
+    border: none !important;
+    color: #C5C6CA !important;
+    box-shadow: none !important;
+}
+
+#mensajes span {
+    display: inline-block;
+    height: 39px;
+    float: left;
+}
+
+#mensajes b.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    background: #0091d9;
+    display: inline-block;
+    font-size: 10px;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    padding: 2px 4px 3px;
+    text-align: center;
+    line-height: normal;
+}
+
+.move_me {
+    animation: mover 1s linear infinite;
+}
+
+@keyframes mover {
+    50% {
+        font-size: 16px;
+    }
+}
+
+.img-move_me {
+    overflow: hidden;
+    animation: img-mover 1s linear infinite;
+}
+
+@keyframes img-mover {
+    50% {
+        transition: transform .5s ease;
+        transform: scale(0.7);
+    }
+}

